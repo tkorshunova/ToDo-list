@@ -16,12 +16,9 @@ const $add = $('#add-submit');
         storage.forEach(item => {
           $list.append(
             $('<li>').addClass('item')
-              .append($('<span>').addClass('item-text').text(item.text))
+              .append($('<span>').addClass(item.done === true ? 'item-text done' : 'item-text').text(item.text))
               .append($('<button>').addClass('item-remove').text('Remove'))
           );
-          if (item.done === true) {
-            $('.item-text').addClass('done');
-          }
         })
       }
     }
